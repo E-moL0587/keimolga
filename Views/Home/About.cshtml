@@ -6,24 +6,30 @@
   .indent p {
     text-indent: 1em;
   }
+  .content-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+  }
 </style>
 
-<div class="container mt-5 indent">
-  <h1 class="text-center">@ViewData["Title"]</h1>
+<div class="container mt-5">
+  <div class="content-wrapper indent">
+    <h1 class="text-center">@ViewData["Title"]</h1>
 
-  <div class="my-4">
-    <h2>はじめに</h2>
-    <p>
-      私たちのサークル「蹊モンガ」は、ポケモンの魅力を広めたいという想いから、2021年10月5日に設立されました。
-      ポケモンが大好きなメンバーが集まり、日々楽しく活動しています！
-    </p>
-  </div>
+    <div class="my-4">
+      <h2>はじめに</h2>
+      <p>
+        私たちのサークル「蹊モンガ」は、ポケモンの魅力を広めたいという想いから、2021年10月5日に設立されました。
+        ポケモンが大好きなメンバーが集まり、日々楽しく活動しています！
+      </p>
+    </div>
 
-  <div class="my-4">
-    <h2>入部について</h2>
-    <p>
-      ポケモンが好きな方ならどなたでも大歓迎です！
-      新しい仲間と一緒に、ポケモンの世界を楽しみませんか？
-    </p>
+    <div class="my-4">
+      <h2>入部について</h2>
+      <p>
+        ポケモンが好きな方ならどなたでも大歓迎です！
+        新しい仲間と一緒に、ポケモンの世界を楽しみませんか？
+      </p>
+    </div>
   </div>
 </div>
