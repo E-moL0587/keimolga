@@ -1,0 +1,7 @@
+C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\bin\Publish\keimolga.exe
+C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\bin\Publish\appsettings.Development.json
+C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\bin\Publish\appsettings.json
+C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\bin\Publish\keimolga.dll
+C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\bin\Publish\keimolga.deps.json
+C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\bin\Publish\keimolga.runtimeconfig.json
+C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\bin\Publish\keimolga.pdb
