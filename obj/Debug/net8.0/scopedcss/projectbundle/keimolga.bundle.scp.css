@@ -37,6 +37,10 @@ button.accept-policy[b-u41u7ie9il] {
   line-height: inherit;
 }
 
+.header[b-u41u7ie9il] {
+  height: 60px;
+}
+
 .footer[b-u41u7ie9il] {
   position: absolute;
   bottom: 0;
