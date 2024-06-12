@@ -21,6 +21,7 @@ body {
   margin-bottom: 60px;
   background: url('https://horizons.pokemon.com/_images/home/gallery/hz-gallery-img-1-2x.jpg') no-repeat center center fixed;
   background-size: cover;
+  color: white;
 }
 
 body::before {
@@ -30,7 +31,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #ffccff55;
+  background-color: #ffaaaa55;
   backdrop-filter: blur(5px);
   z-index: -1;
 }
