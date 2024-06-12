@@ -3,17 +3,19 @@
 }
 
 <style>
-  .custom-title { font-size: 5rem; }
   .centered-container { display: flex; justify-content: center; align-items: center; height: calc(95vh - 120px); }
   .fade-in { opacity: 0; transition: opacity 1s ease-in-out; }
   .fade-in.visible { opacity: 1; }
-  .section-container { margin: 200px 0; }
+  .section-container { margin: 100px 0; }
 </style>
 
 <div class="container centered-container text-center fade-in">
   <div class="content">
-    <h1 class="custom-title">@ViewData["Title"]</h1>
-    <p class="mt-4">ポケモンの魅力を伝えたい、成蹊大学ポケモンサークルの公式ホームページです。</p>
+    <h1>@ViewData["Title"]</h1>
+    <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/587.png" alt="587" width="200px">
+    <p class="mt-4">
+      "ポケモンの魅力を伝えたい"<br>
+      成蹊大学ポケモンサークルの公式ホームページです。</p>
   </div>
 </div>
 
