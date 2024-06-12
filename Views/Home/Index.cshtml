@@ -3,28 +3,76 @@
 }
 
 <style>
-  .custom-title {
-    font-size: 5rem;
-  }
-  .centered-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(95vh - 120px);
-  }
+  .custom-title { font-size: 5rem; }
+  .centered-container { display: flex; justify-content: center; align-items: center; height: calc(95vh - 120px); }
+  .fade-in { opacity: 0; transition: opacity 1s ease-in-out; }
+  .fade-in.visible { opacity: 1; }
+  .section-container { margin: 100px 0; }
 </style>
 
-<div class="container centered-container text-center">
+<div class="container centered-container text-center fade-in">
   <div class="content">
     <h1 class="custom-title">@ViewData["Title"]</h1>
     <p class="mt-4">ポケモンの魅力を伝えたい、成蹊大学ポケモンサークルの公式ホームページです。</p>
   </div>
 </div>
 
+<div class="container section-container fade-in">
+  <div class="row align-items-center">
+    <div class="col-md-6 text-center">
+      <h2>サークルについて</h2>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="https://horizons.pokemon.com/_images/home/gallery/hz-gallery-img-11-2x.jpg" class="img-fluid" alt="サークルについて">
+    </div>
+  </div>
+</div>
+
+<div class="container section-container fade-in">
+  <div class="row align-items-center flex-row-reverse">
+    <div class="col-md-6 text-center">
+      <h2>活動記録</h2>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="https://horizons.pokemon.com/_images/home/gallery/hz-gallery-img-10-2x.jpg" class="img-fluid" alt="活動記録">
+    </div>
+  </div>
+</div>
+
+<div class="container section-container fade-in">
+  <div class="row align-items-center">
+    <div class="col-md-6 text-center">
+      <h2>お問い合わせ</h2>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="https://horizons.pokemon.com/_images/home/gallery/hz-gallery-img-1-2x.jpg" class="img-fluid" alt="お問い合わせ">
+    </div>
+  </div>
+</div>
+
 @section Scripts {
   <script>
     $(document).ready(function() {
-      $('.content').hide().fadeIn(1000);
+      function checkVisibility() {
+        $('.fade-in').each(function() {
+          var elementTop = $(this).offset().top;
+          var elementBottom = elementTop + $(this).outerHeight();
+          var viewportTop = $(window).scrollTop();
+          var viewportBottom = viewportTop + $(window).height();
+
+          if (elementBottom > viewportTop && elementTop < viewportBottom) {
+            $(this).addClass('visible');
+          } else {
+            $(this).removeClass('visible');
+          }
+        });
+      }
+
+      $(window).on('scroll resize', function() {
+        checkVisibility();
+      });
+
+      checkVisibility();
     });
   </script>
 }
