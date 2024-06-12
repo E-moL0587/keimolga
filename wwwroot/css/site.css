@@ -19,4 +19,18 @@ html {
 
 body {
   margin-bottom: 60px;
+  background: url('https://horizons.pokemon.com/_images/home/gallery/hz-gallery-img-1-2x.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffccff55;
+  backdrop-filter: blur(5px);
+  z-index: -1;
 }
