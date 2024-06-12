@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("keimolga")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd15faa6d75673ccb46f90fc62326475acdbcd4e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0726638e14355c77faf2750e9aaf83af37e732d6")]
 [assembly: System.Reflection.AssemblyProductAttribute("keimolga")]
 [assembly: System.Reflection.AssemblyTitleAttribute("keimolga")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

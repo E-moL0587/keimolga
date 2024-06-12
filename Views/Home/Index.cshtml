@@ -6,9 +6,26 @@
   .custom-title {
     font-size: 5rem;
   }
+
+  .centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
 </style>
 
-<div class="container mt-2">
-  <h1 class="custom-title">Keimolga - @ViewData["Title"]</h1>
-  <p class="mt-4">成蹊大学ポケモンサークルの公式ホームページです。こちらではサークルについてをご紹介いたします！</p>
+<div class="container centered-container text-center">
+  <div class="content">
+    <h1 class="custom-title">@ViewData["Title"]</h1>
+    <p class="mt-4">ポケモンの魅力を伝えたい、成蹊大学ポケモンサークルの公式ホームページです。</p>
+  </div>
 </div>
+
+@section Scripts {
+  <script>
+    $(document).ready(function() {
+      $('.content').hide().fadeIn(1000);
+    });
+  </script>
+}
