@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\竹内 海斗\\workspace\\dotnet-space\\keimolga\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\keimolga.bundle.scp.css",
-      "PackagePath": "staticwebassets\\keimolga.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Users\\竹内 海斗\\workspace\\dotnet-space\\keimolga\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
