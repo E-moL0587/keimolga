@@ -21,9 +21,7 @@ C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\obj\Release\net8.0\static
 C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\obj\Release\net8.0\staticwebassets\msbuild.buildMultiTargeting.keimolga.props
 C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\obj\Release\net8.0\staticwebassets\msbuild.buildTransitive.keimolga.props
 C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\obj\Release\net8.0\staticwebassets.pack.json
-C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\obj\Release\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\obj\Release\net8.0\scopedcss\bundle\keimolga.styles.css
-C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\obj\Release\net8.0\scopedcss\projectbundle\keimolga.bundle.scp.css
 C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\obj\Release\net8.0\keimolga.dll
 C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\obj\Release\net8.0\refint\keimolga.dll
 C:\Users\竹内 海斗\workspace\dotnet-space\keimolga\obj\Release\net8.0\keimolga.pdb

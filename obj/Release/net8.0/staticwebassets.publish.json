@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bp501OLCw/AZeYyqmJkmiQ7WGnU2aKLN1oD3qQTBcLQ=",
+  "Hash": "M7/IEPggS/OHB12HGt1KSZ4vzFZ6j0xee67092HR94A=",
   "Source": "keimolga",
   "BasePath": "_content/keimolga",
   "Mode": "Default",
@@ -16,44 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\竹内 海斗\\workspace\\dotnet-space\\keimolga\\obj\\Release\\net8.0\\scopedcss\\bundle\\keimolga.styles.css",
-      "SourceId": "keimolga",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\竹内 海斗\\workspace\\dotnet-space\\keimolga\\obj\\Release\\net8.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/keimolga",
-      "RelativePath": "keimolga.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\竹内 海斗\\workspace\\dotnet-space\\keimolga\\obj\\Release\\net8.0\\scopedcss\\bundle\\keimolga.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\竹内 海斗\\workspace\\dotnet-space\\keimolga\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\keimolga.bundle.scp.css",
-      "SourceId": "keimolga",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\竹内 海斗\\workspace\\dotnet-space\\keimolga\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/keimolga",
-      "RelativePath": "keimolga.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\竹内 海斗\\workspace\\dotnet-space\\keimolga\\obj\\Release\\net8.0\\scopedcss\\projectbundle\\keimolga.bundle.scp.css"
-    },
     {
       "Identity": "C:\\Users\\竹内 海斗\\workspace\\dotnet-space\\keimolga\\wwwroot\\css\\site.css",
       "SourceId": "keimolga",
