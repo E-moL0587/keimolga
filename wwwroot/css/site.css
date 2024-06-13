@@ -36,6 +36,9 @@ body::before {
   z-index: -1;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
+::-webkit-scrollbar { display: none; }
+.indent p { text-indent: 1em; }
+.content-wrapper { max-width: 500px; margin: 0 auto; }
+.section-container { margin: 100px 0; }
+h2 { position: relative; padding-bottom: 10px; }
+h2::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1.5px; background-color: #fff; }

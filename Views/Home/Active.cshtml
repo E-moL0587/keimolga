@@ -3,31 +3,70 @@
 }
 
 <style>
-  .indent p { text-indent: 1em; }
-  .content-wrapper { max-width: 500px; margin: 0 auto; }
-  .section-container { margin: 100px 0; }
+  .image-container { overflow: hidden; }
+  .zoom { transition: transform 1.5s ease-in-out; transform-origin: bottom right; }
+  .zoom:hover { transform: scale(3); }
 </style>
 
 <div class="container mt-5">
   <div class="content-wrapper indent">
-    <h1 class="text-center">@ViewData["Title"]</h1>
+    <h1 class="text-center mb-5">@ViewData["Title"]</h1>
 
     <div class="section-container">
-      <h2>活動について</h2>
-      <p>
+      <h2 class="mb-3">活動について</h2>
+      <p class="mb-3">
         私たちの主な活動は、ポケットモンスターシリーズの対戦や交換、そして無料かつチームで協力して遊べることが強みの「ポケモンユナイト」を主軸としており、他団体とは一味違った活動を体験できます。
+      </p>
+      <video width="100%" autoplay loop muted>
+        <source src="https://unite.pokemon.com/videos/overview/poke029-pokemon-unite-official-site-header-video-1920x816.mp4" type="video/mp4">
+        お使いのブラウザは、動画タグに対応していません。
+      </video>
+      <p class="mt-3 mb-3">
         また、ポケモンに関する知識を深めるための勉強会や、メンバー同士の交流を深めるレクリエーションも行っています。
         近年では、他大学のサークルとの対面交流会に参加させていただいたり、「ポケモンユナイト大学祭2022」の運営も担当しました。
+      </p>
+      <p class="mb-5">
+        詳しくは <a href="https://www.pokemonunite.jp/ja/news/82/" target="_blank">こちら</a> をご覧ください。
       </p>
     </div>
 
     <div class="section-container">
-      <h2>活動場所</h2>
+      <h2 class="mb-3">活動場所</h2>
+      <p class="mb-3">
+        活動場所は成蹊大学の9号館405号室です。右端の正門を入り、画像中央の下記の画像の➈が9号館405号室になります！
+      </p>
+      <div class="image-container mb-3">
+        <img src="https://www.seikei.ac.jp/university/img/aboutus/campus_uni/img_map1.png" alt="成蹊大学キャンパスマップ" class="img-fluid zoom">
+      </div>
       <p>
-        活動場所は成蹊大学の9号館405号室です。
         前期は毎週火曜日と水曜日の16:50から20:45まで活動しています。
         広々としたスペースでリラックスしながら、楽しく活動できます。
       </p>
     </div>
   </div>
 </div>
+
+@section Scripts {
+  <script>
+    $(document).ready(function(){
+      function zoomAnimation() {
+        $('.zoom').animate({ transform: 'scale(1.2)' }, {
+          step: function(now, fx) {
+            $(this).css('transform', 'scale(' + now + ')');
+          },
+          duration: '1500',
+          complete: function() {
+            $('.zoom').animate({ transform: 'scale(1)' }, {
+              step: function(now, fx) {
+                $(this).css('transform', 'scale(' + now + ')');
+              },
+              duration: '1500',
+              complete: zoomAnimation
+            });
+          }
+        });
+      }
+      zoomAnimation();
+    });
+  </script>
+}
