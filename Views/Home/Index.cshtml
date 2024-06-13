@@ -7,6 +7,11 @@
   .fade-in { opacity: 0; transition: opacity 1s ease-in-out; }
   .fade-in.visible { opacity: 1; }
   .section-container { margin: 100px 0; }
+  .fade-in-img-wrapper { overflow: hidden; height: 100%; position: relative; }
+  .fade-in-img { width: 100%; height: auto; transform: translateX(200%) scale(2); transition: transform 1.5s ease-in-out; }
+  .fade-in-img-wrapper.visible .fade-in-img { transform: translateX(0) scale(1); }
+  .fade-in-img-left { transform: translateX(-200%) scale(2); }
+  .fade-in-img-wrapper.visible .fade-in-img-left { transform: translateX(0) scale(1); }
 </style>
 
 <div class="container centered-container text-center fade-in">
@@ -25,8 +30,8 @@
     <div class="col-md-6 text-center">
       <h2>サークルについて</h2>
     </div>
-    <div class="col-md-6 text-center">
-      <img src="https://horizons.pokemon.com/_images/home/gallery/hz-gallery-img-11-2x.jpg" class="img-fluid" alt="サークルについて">
+    <div class="col-md-6 text-center fade-in-img-wrapper">
+      <img src="https://horizons.pokemon.com/_images/home/gallery/hz-gallery-img-11-2x.jpg" class="img-fluid fade-in-img" alt="サークルについて">
     </div>
   </div>
 </div>
@@ -36,8 +41,8 @@
     <div class="col-md-6 text-center">
       <h2>活動記録</h2>
     </div>
-    <div class="col-md-6 text-center">
-      <img src="https://horizons.pokemon.com/_images/home/gallery/hz-gallery-img-10-2x.jpg" class="img-fluid" alt="活動記録">
+    <div class="col-md-6 text-center fade-in-img-wrapper">
+      <img src="https://horizons.pokemon.com/_images/home/gallery/hz-gallery-img-10-2x.jpg" class="img-fluid fade-in-img fade-in-img-left" alt="活動記録">
     </div>
   </div>
 </div>
@@ -47,8 +52,8 @@
     <div class="col-md-6 text-center">
       <h2>お問い合わせ</h2>
     </div>
-    <div class="col-md-6 text-center">
-      <img src="https://horizons.pokemon.com/_images/home/gallery/hz-gallery-img-1-2x.jpg" class="img-fluid" alt="お問い合わせ">
+    <div class="col-md-6 text-center fade-in-img-wrapper">
+      <img src="https://horizons.pokemon.com/_images/home/gallery/hz-gallery-img-1-2x.jpg" class="img-fluid fade-in-img" alt="お問い合わせ">
     </div>
   </div>
 </div>
@@ -58,6 +63,19 @@
     $(document).ready(function() {
       function checkVisibility() {
         $('.fade-in').each(function() {
+          var elementTop = $(this).offset().top;
+          var elementBottom = elementTop + $(this).outerHeight();
+          var viewportTop = $(window).scrollTop();
+          var viewportBottom = viewportTop + $(window).height();
+
+          if (elementBottom > viewportTop && elementTop < viewportBottom) {
+            $(this).addClass('visible');
+          } else {
+            $(this).removeClass('visible');
+          }
+        });
+
+        $('.fade-in-img-wrapper').each(function() {
           var elementTop = $(this).offset().top;
           var elementBottom = elementTop + $(this).outerHeight();
           var viewportTop = $(window).scrollTop();
