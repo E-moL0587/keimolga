@@ -15,15 +15,17 @@
   .wave-text span { display: inline-block; opacity: 0; position: relative; }
 
   .circle-container { position: relative; width: 250px; height: 250px; margin: auto; }
-  .circle { width: 250px; height: 250px; border: 2px solid transparent; border-radius: 50%; border-top-color: black; position: absolute; top: 0; left: 0; }
-  .hidden-img { display: none; }
+  .circle { position: absolute; top: 0; left: 0; }
+  .hidden-img { display: none; position: absolute; top: 0; left: 0; }
 </style>
 
 <div class="container centered-container text-center fade-in">
   <div class="content">
     <h1 class="wave-text" id="title">@ViewData["Title"]</h1>
     <div class="circle-container">
-      <div class="circle" id="circle-animation"></div>
+      <svg width="250" height="250" viewBox="0 0 250 250" class="circle">
+        <circle cx="125" cy="125" r="120" stroke="black" stroke-width="3" fill="none" stroke-dasharray="0, 753" id="circle-animation"></circle>
+      </svg>
       <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/587.png" class="img-fluid hidden-img" alt="エモンガ" width="250px" id="emolga-img">
     </div>
 
@@ -70,6 +72,10 @@
 @section Scripts {
   <script>
     $(document).ready(function() {
+      var interval;
+      var totalLength = 754; // Circumference of the circle
+      var duration = 1500; // Total duration of the animation in milliseconds
+
       function checkVisibility() {
         $('.fade-in').each(function() {
           var elementTop = $(this).offset().top;
@@ -113,6 +119,24 @@
             resetWaveEffect($(this));
           }
         });
+
+        var circleContainer = $('.circle-container');
+        var circleContainerTop = circleContainer.offset().top;
+        var circleContainerBottom = circleContainerTop + circleContainer.outerHeight();
+        var viewportTop = $(window).scrollTop();
+        var viewportBottom = viewportTop + $(window).height();
+
+        if (circleContainerBottom > viewportTop && circleContainerTop < viewportBottom) {
+          if (!circleContainer.hasClass('animated')) {
+            drawCircle();
+            circleContainer.addClass('animated');
+          }
+        } else {
+          $('#circle-animation').css('stroke-dasharray', '0, 753');
+          $('#emolga-img').hide();
+          clearInterval(interval);
+          circleContainer.removeClass('animated');
+        }
       }
 
       function applyWaveEffect(element) {
@@ -139,16 +163,29 @@
         element.html(element.text());
       }
 
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+
       function drawCircle() {
-        var degrees = 0;
-        var interval = setInterval(function() {
-          $('#circle-animation').css('transform', 'rotate(' + degrees + 'deg)');
-          degrees += 3.6;
-          if (degrees >= 360) {
-            clearInterval(interval);
+        var startTime = null;
+
+        function animateCircle(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var progress = (timestamp - startTime) / duration;
+          var easedProgress = easeInOutCubic(progress);
+
+          var length = easedProgress * totalLength;
+          $('#circle-animation').css('stroke-dasharray', length + ', ' + totalLength);
+
+          if (progress < 1) {
+            requestAnimationFrame(animateCircle);
+          } else {
             $('#emolga-img').fadeIn();
           }
-        }, 10);
+        }
+
+        requestAnimationFrame(animateCircle);
       }
 
       $(window).on('scroll resize', function() {
@@ -156,7 +193,6 @@
       });
 
       checkVisibility();
-      drawCircle();
     });
   </script>
 }
