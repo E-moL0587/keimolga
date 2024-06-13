@@ -181,6 +181,7 @@
           if (progress < 1) {
             requestAnimationFrame(animateCircle);
           } else {
+            $('#circle-animation').css('stroke-dasharray', '0, ' + totalLength);
             $('#emolga-img').fadeIn();
           }
         }
